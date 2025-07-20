@@ -28,7 +28,7 @@ const app = express();
 
 // Secure CORS Setup
 const allowedOrigins = [
-  "https://souvinerbooking01-hiczfv1d0-adnan-alam-s-projects.vercel.app",
+  "https://souvinerbookingcom-git-main-adnan-alam-s-projects.vercel.app",
   "https://hotels-voyeger.vercel.app",
   "https://emergency-qlgnqlygl-rivu-chatterjees-projects.vercel.app"
 ];
