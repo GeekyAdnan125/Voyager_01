@@ -26,22 +26,10 @@ startCleanupScheduler();
 
 const app = express();
 
-// Secure CORS Setup
-const allowedOrigins = [
-  "https://souvinerbookingcom-git-main-adnan-alam-s-projects.vercel.app",
-  "https://hotels-voyeger.vercel.app",
-  "https://emergency-qlgnqlygl-rivu-chatterjees-projects.vercel.app"
-];
-
+// 🔓 CORS Setup - Allow All Origins (Use this for development or Vercel deployment)
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true
+  origin: true,           // Reflects the request origin
+  credentials: true       // Allows cookies to be sent
 }));
 
 // Middlewares
@@ -68,4 +56,4 @@ app.use("/api/owner/hotel", ownerHotelRoutes);
 
 // Start Server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
