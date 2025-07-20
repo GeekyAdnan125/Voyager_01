@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const fileUpload = require("express-fileupload");
 const cors = require("cors"); 
-
 const connectDB = require("./config/database");
 const { connectClodinary } = require("./config/cloudinary");
 const authroutes  = require("./routes/authroute")
