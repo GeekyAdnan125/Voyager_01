@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { authMiddleware } = require("../middleware/AuthMiddleware");
+const { authMiddleware } = require("../middleware/authMiddleware");
 
 const { getAllSouvenirs, getSouvenirsByVendor, createOrder, createSouvenirOrder, getSouvenirOrderById, getAllSouvenirOrders, verifyPayment, sendReceipt } = require("../controller/souvenircontroller");
 
