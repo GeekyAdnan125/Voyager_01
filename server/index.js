@@ -28,7 +28,8 @@ const app = express();
 
 // Secure CORS Setup
 const allowedOrigins = [
-  "http://localhost:5173",
+  "https://souvinerbooking01.vercel.app",
+  "https://hotels-voyeger.vercel.app",
   "https://emergency-qlgnqlygl-rivu-chatterjees-projects.vercel.app"
 ];
 
