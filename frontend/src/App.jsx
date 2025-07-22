@@ -34,8 +34,8 @@ import Digha from "./pages/Digha";
 import { useAppContext } from "./context/AppContext";
 import HotelApp from "./ownersec/HotelApp";
 import ProtectedRoute from "./components/protectedRoute";
-import VendorApp from "./vendorsec/lib/vendorApp";
 import SouBooking_App from "./SouBooking_App";
+import VendorApp from "./vendorsec/lib/VendorApp";
 
 const App = () => {
   const { user } = useAppContext();
