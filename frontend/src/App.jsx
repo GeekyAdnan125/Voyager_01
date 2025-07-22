@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -11,7 +10,7 @@ import MapPage from "./pages/MapPage";
 import Weather from "./pages/Weather";
 import Emergency from "./pages/Emergency";
 import TrackLocationPage from "./pages/TrackLocationPage";
-import Explore from "./pages/Explore";
+import { ToastContainer } from 'react-toastify';
 import TravelDestination from "./pages/TravelDestination";
 import Testimonials from "./components/Testimonials";
 import HotelBooking from "./pages/HotelBooking";

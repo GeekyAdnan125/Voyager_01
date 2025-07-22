@@ -91,17 +91,16 @@ function Login() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-gray-500 to-gray-900">
-      <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-800">Voyager</h1>
-          <h2 className="text-xl font-semibold text-gray-600 mt-2">Login</h2>
-        </div>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-gray-100 to-gray-800">
+      <div className="bg-gray-300 shadow-lg rounded-lg p-8 w-96 text-center">
+        <h2 className="text-3xl font-bold text-gray-800 mb-2">Voyager</h2>
+        <h3 className="text-lg font-semibold mb-4">Login</h3>
+        <form onSubmit={handleSubmit}>
+          {/* Role Selection */}
+          <div className="mb-3 text-left">
             <label
               htmlFor="role"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 mb-1"
             >
               Login as:
             </label>
@@ -110,7 +109,7 @@ function Login() {
               id="role"
               value={loginInfo.role}
               onChange={handleChange}
-              className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 bg-white text-gray-800"
               disabled={loading}
             >
               <option value="User">User</option>
@@ -119,67 +118,48 @@ function Login() {
             </select>
           </div>
 
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Email Address
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={loginInfo.email}
-              onChange={handleChange}
-              required
-              className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              disabled={loading}
-            />
-          </div>
+          <input
+            type="email"
+            name="email"
+            value={loginInfo.email}
+            onChange={handleChange}
+            className="w-full px-4 py-2 border rounded-md mb-3 focus:outline-none focus:ring-2 focus:ring-gray-500"
+            placeholder="Email Address"
+            required
+            disabled={loading}
+          />
 
-          <div>
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={loginInfo.password}
-              onChange={handleChange}
-              required
-              className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              disabled={loading}
-            />
-          </div>
+          <input
+            type="password"
+            name="password"
+            value={loginInfo.password}
+            onChange={handleChange}
+            className="w-full px-4 py-2 border rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-gray-500"
+            placeholder="Password"
+            required
+            disabled={loading}
+          />
 
           <button
             type="submit"
-            className={`w-full flex justify-center py-3 rounded-lg text-lg font-medium text-white ${
-              loading
-                ? "bg-gray-400 cursor-not-allowed"
-                : "bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            }`}
+            className="w-full bg-black hover:bg-gray-800 text-white font-semibold py-2 rounded-md transition-all duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed"
             disabled={loading}
           >
-            {loading ? "Authenticating..." : "Sign In"}
+            {loading ? "Signing In..." : "Login"}
           </button>
-        </form>
 
-        <div className="mt-6 text-center">
-          <span className="text-gray-500">Don't have an account? </span>
-          <Link
-            to="/register"
-            className="font-medium text-blue-600 hover:text-blue-500"
-          >
-            Create a new account
-          </Link>
-        </div>
+          <p className="text-gray-600 text-sm mt-3">
+            Don’t have an account?{" "}
+            <Link
+              to="/register"
+              className="text-blue-500 font-medium hover:underline"
+            >
+              Sign Up
+            </Link>
+          </p>
+        </form>
       </div>
+
       <ToastContainer />
     </div>
   );
