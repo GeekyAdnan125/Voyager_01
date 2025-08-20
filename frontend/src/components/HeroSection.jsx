@@ -6,7 +6,7 @@ const images = [
   "https://cultureandheritage.org/wp-content/uploads/2023/06/xyz-53-1200x613.jpg",
   "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/12/Generic-6-5.jpg",
   "https://assets.traveltriangle.com/blog/wp-content/uploads/2020/01/Kolkata_13th-jan.jpg",
-
+   "https://www.trawell.in/blog/wp-content/uploads/2022/08/west_bengal-1-730x410.jpg",
   
   "https://cdn.britannica.com/68/178168-050-EED35840/Somapura-Mahavira-Paharpur-Bangladesh.jpg",
   "https://im.whatshot.in/content/2017/Sep/1504796610-body-3-cropped.jpg",
