@@ -20,7 +20,7 @@ i18n
           herosec: {
             heroTitle: "Discover Your Next Adventure",
             heroSubtitle:
-              "Unforgettable journeys start here. Explore breathtaking destinations around the world.",
+              "Step into history and discover the timeless heritage of West Bengal.",
             explore: "Explore Now",
           },
           navbar: {
