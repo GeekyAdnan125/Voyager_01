@@ -17,22 +17,38 @@ export default function LoginPage({ onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      if (email && password) {
-        const hotelOwner = {
-          id: "1",
-          name: "Grand Palace Hotel",
-          email: email,
-          location: "Mumbai, India",
-        };
-        onLogin(hotelOwner);
+    setError("");
+
+    try {
+      const res = await fetch("https://your-backend.onrender.com/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (!res.ok) {
+        const errData = await res.json();
+        throw new Error(errData.message || "Login failed");
       }
-    }, 1000);
+
+      const data = await res.json();
+
+      // Example: backend returns { user: {...}, token: "xyz" }
+      onLogin(data.user);
+
+      // Store token in localStorage (optional, for auth persistence)
+      localStorage.setItem("token", data.token);
+
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -81,13 +97,13 @@ export default function LoginPage({ onLogin }) {
                 />
               </div>
             </div>
+            {error && (
+              <p className="text-red-500 text-sm text-center">{error}</p>
+            )}
             <Button type="submit" className="w-full" disabled={isLoading}>
               {isLoading ? "Signing in..." : "Sign In"}
             </Button>
           </form>
-          <div className="mt-4 text-center text-sm text-gray-600">
-            Demo: Use any email and password to login
-          </div>
         </CardContent>
       </Card>
     </div>

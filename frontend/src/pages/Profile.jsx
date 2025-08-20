@@ -5,7 +5,6 @@ import { useAppContext } from "../context/AppContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiUser, FiStar, FiLogOut, FiCamera, FiX } from "react-icons/fi";
 import { jwtDecode } from "jwt-decode";
-
 const Profile = ({ isOpen, onClose }) => {
   const {
     user,
@@ -128,7 +127,7 @@ const Profile = ({ isOpen, onClose }) => {
                 {preview ? (
                   <img src={preview} alt="Preview" className="w-full h-full object-cover" />
                 ) : userDetails?.avatarUrl ? (
-                  <img src={userDetails.avatarUrl} alt="User" className="w-full h-full object-cover" />
+                  <img src={userDetails?.avatarUrl} alt="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" className="w-full h-full object-cover" />
                 ) : (
                   <div className="w-full h-full bg-gray-100 flex items-center justify-center text-gray-400">
                     <FiUser size={32} />

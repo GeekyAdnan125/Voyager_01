@@ -44,7 +44,6 @@ export const AppContextProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem("emergencyContacts", JSON.stringify(emergencyContacts));
   }, [emergencyContacts]);
-
   useEffect(() => {
     const token = localStorage.getItem("authToken");
     const role = localStorage.getItem("userRole");

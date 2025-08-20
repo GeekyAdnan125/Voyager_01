@@ -2,17 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
-
 const images = [
-  "https://plus.unsplash.com/premium_photo-1661963643348-e95c6387ee8a?q=100&w=3000&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=100&w=3000&auto=format&fit=crop",
-  "https://plus.unsplash.com/premium_photo-1682091907070-4985a6fbe6d2?q=100&w=3000&auto=format&fit=crop",
-  "https://plus.unsplash.com/premium_photo-1663127647641-6d5ded8bf5f9?q=100&w=3000&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1464757494038-157e877f60d4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://plus.unsplash.com/premium_photo-1661885523029-fc960a2bb4f3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://plus.unsplash.com/premium_photo-1664461663120-b39152ba92ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1460627390041-532a28402358?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://plus.unsplash.com/premium_photo-1678727128546-154b1725c336?q=80&w=2149&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  "https://cultureandheritage.org/wp-content/uploads/2023/06/xyz-53-1200x613.jpg",
+  "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/12/Generic-6-5.jpg",
+  "https://assets.traveltriangle.com/blog/wp-content/uploads/2020/01/Kolkata_13th-jan.jpg",
+
+  
+  "https://cdn.britannica.com/68/178168-050-EED35840/Somapura-Mahavira-Paharpur-Bangladesh.jpg",
+  "https://im.whatshot.in/content/2017/Sep/1504796610-body-3-cropped.jpg",
+  "https://www.godigit.com/content/dam/godigit/directportal/en/contenthm/heritage-sites-in-west-bengal.jpg"
 ];
 
 const HeroSection = () => {
@@ -41,7 +39,7 @@ const HeroSection = () => {
     if (loaded) {
       const interval = setInterval(() => {
         setIndex((prev) => (prev + 1) % images.length);
-      }, 4000);
+      }, 3000);
       return () => clearInterval(interval);
     }
   }, [loaded]);
@@ -53,7 +51,7 @@ const HeroSection = () => {
           <img
             key={i}
             src={image}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+            className={`absolute inset-0 w-full h-full object-fit transition-opacity duration-1000 ${
               i === index ? "opacity-100" : "opacity-0"
             }`}
           />
