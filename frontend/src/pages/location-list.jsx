@@ -114,18 +114,6 @@ const locationDetails = {
     attractions: ["Local sightseeing", "Cultural experiences", "Natural beauty", "Local cuisine"],
     image: "https://i.pinimg.com/736x/f8/a2/5f/f8a25f0f22e513ced3fc49ff033aa4c4.jpg",
   },
-     default: {
-    description: "Discover the unique beauty and culture of this destination.",
-    bestTime: "Varies by season",
-    attractions: ["Local sightseeing", "Cultural experiences", "Natural beauty", "Local cuisine"],
-    image: "/placeholder.svg?height=200&width=300",
-  },
-     default: {
-    description: "Discover the unique beauty and culture of this destination.",
-    bestTime: "Varies by season",
-    attractions: ["Local sightseeing", "Cultural experiences", "Natural beauty", "Local cuisine"],
-    image: "/placeholder.svg?height=200&width=300",
-  },
 }
 
 export function LocationList({ locations, state, region }) {
