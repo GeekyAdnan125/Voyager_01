@@ -34,7 +34,7 @@ exports.createSouvenir = async (req, res) => {
     };
 
     const parsedFeatures = features ? safeJSONParse(features, []) : [];
-
+    
     const souvenirImages = req.files?.imageFile;
     if (!souvenirImages) {
       return res.status(400).json({ success: false, message: "Please provide at least one image file." });
