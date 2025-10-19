@@ -44,6 +44,9 @@ app.use(fileUpload({
 app.get("/", (req, res) => {
   res.send("Voyager API Server is Running");
 });
+app.get("/api/ping", (req, res) => {
+  res.status(200).json({ message: "Voyager API is alive 🚀" });
+});
 
 app.use("/api/users", authroutes);
 app.use("/api/places", placeroutes);

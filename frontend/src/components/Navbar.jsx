@@ -5,9 +5,6 @@ import { useTranslation } from "react-i18next";
 import LanguageChanger from "./LanguageChanger";
 import { useAppContext } from "../context/AppContext";
 import Profile from "../pages/Profile";
-
-
-
 const searchDestinations = [
   { name: "Bishnupur", path: "/bishupur" },
   { name: "Doars", path: "/doars" },
